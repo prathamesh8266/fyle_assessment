@@ -7,7 +7,8 @@ import { TrendingSubjectsComponent } from '../app/components/trending-subjects/t
 import { HomeComponent } from '../app/components/home/home.component';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeRoutingModule } from './components/home/home-routing.module';
 
 
 @NgModule({
@@ -16,9 +17,11 @@ import { ReactiveFormsModule } from '@angular/forms';
     BrowserModule,
     RouterModule,
     AppRoutingModule,
+    HomeRoutingModule,
     HttpClientModule,
     SharedModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],

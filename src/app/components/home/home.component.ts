@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { debounceTime, filter } from 'rxjs';
+import { Router } from '@angular/router';
+import { SubjectsService } from '../../core/services/subjects.service';
 
 @Component({
   selector: 'front-end-internship-assignment-home',
@@ -8,10 +10,21 @@ import { debounceTime, filter } from 'rxjs';
   styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent implements OnInit {
-  bookSearch: FormControl;
 
-  constructor() {
+  bookSearch: FormControl;
+  subjectName: string;
+
+  constructor(private _router: Router,
+     private subjectsService : SubjectsService) {
     this.bookSearch = new FormControl('');
+    this.subjectName = '';
+  }
+
+  onSubmit(){
+    console.log(this.subjectName)
+    let allBooks : any = []
+    if (this.subjectName === '' || this.subjectName === ' ') return;
+    this._router.navigate([`/trending-subject/${this.subjectName}/2`])
   }
 
   trendingSubjects: Array<any> = [

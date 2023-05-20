@@ -7,23 +7,22 @@
 
 @import url("https://fonts.googleapis.com/icon?family=Material+Icons");
 
-*,
-html,
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 body {
-  @apply
-  tw-font-activ-grotisk
-  tw-text-14-px
-  tw-box-border
-  tw-antialiased;
+  @apply tw-m-0 tw-p-0
+}
+
+body{
+  font-family: 'Roboto', sans-serif !important;
+  font-size: 14px !important;
+  height: 100vh !important;
+  // overflow-y: hidden;
 }
 
 html,
 body {
   @apply tw-h-full tw-w-full
-}
-
-body {
-  @apply tw-m-0 tw-p-0
 }
 
 table {

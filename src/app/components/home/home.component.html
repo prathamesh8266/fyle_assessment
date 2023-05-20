@@ -1,23 +1,38 @@
 <div class="header">
   <div class="tw-text-24-px tw-font-600">Open Books Library</div>
-  <div class="search-button">
-    <mat-icon class="tw-mt-16-px" aria-label="Search Icon">search</mat-icon>
+  <form (ngSubmit)="onSubmit()" class="search-button">
+    <button type="submit" class="submit-button">
+      <mat-icon class="" aria-label="Search Icon">search</mat-icon>
+    </button>
     <input
-      [formControl]="bookSearch"
-      name="searchKey"
+      [(ngModel)]="subjectName"
+      name="subjectName"  
       type="text"
       placeholder="Search Books"
-      class="tw-border-0 tw-bg-inherit"
+      class="tw-border-0 tw-ml-2 tw-bg-inherit search_input"
     >
-  </div>
+  </form>
 </div>
-<div class="tw-flex tw-flex-row tw-m-24-px">
-  <section class="trending-subjects">
-    <div class="tw-font-600 tw-text-24-px">Trending Subjects</div>
-    <ul class="tw-list-none tw-pl-0">
-      <li class="tw-text-16-px tw-cursor-pointer tw-p-12-px" *ngFor="let subject of trendingSubjects" routerLink="/trending-subject/{{ subject.name }}">
-        {{ subject.name }}
-      </li>
-    </ul>
-  </section>
+
+<div class="main-container">
+  <div class="col-nav-bar bg-blue-500 tw-flex tw-flex-row tw-ml-16-px tw-w-98 nav_column">
+      <section class="trending-subjects">
+        <ul class="tw-list-none tw-pl-0 bg-blue-500">
+          <li class="home_li tw-text-16-px tw-cursor-pointer tw-p-12-px">
+            <mat-icon class="home_icon">home</mat-icon>
+            <a href="/" class="home_link" Home>Home</a>
+          </li>
+          <li class="search_li tw-text-16-px tw-cursor-pointer tw-p-12-px">
+            <mat-icon class="home_icon" aria-label="Search Icon">search</mat-icon>
+            <a href="/" class="search_link" Home>Search</a>
+          </li>
+          <li class="tw-text-16-px tw-cursor-pointer tw-p-12-px" *ngFor="let subject of trendingSubjects" routerLink="/trending-subject/{{ subject.name }}/1">
+            {{ subject.name }}
+          </li>
+        </ul>
+      </section>
+    </div>
+    <div class="table_view">
+        <router-outlet></router-outlet>
+    </div>
 </div>

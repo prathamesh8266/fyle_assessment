@@ -28,27 +28,27 @@ export interface Availability {
 export interface Book {
   key: string;
   title: string;
-  edition_count: number;
-  cover_id: number;
-  cover_edition_key: string;
-  subject: string[];
-  ia_collection: string[];
-  lendinglibrary: boolean;
-  printdisabled: boolean;
-  lending_edition: string;
-  lending_identifier: string;
+  // edition_count: number;
+  // cover_id: number;
+  // cover_edition_key: string;
+  // subject: string[];
+  // ia_collection: string[];
+  // lendinglibrary: boolean;
+  // printdisabled: boolean;
+  // lending_edition: string;
+  // lending_identifier: string;
   authors: Author[];
   first_publish_year: number;
-  ia: string;
-  public_scan: boolean;
-  has_fulltext: boolean;
-  availability: Availability;
+  // ia: string;
+  // public_scan: boolean;
+  // has_fulltext: boolean;
+  // availability: Availability;
 }
 
 export interface BookResponse {
-  key: string;
-  name: string;
-  subject_type: string;
-  work_count: number;
+  // key: string;
+  // name: string;
+  // subject_type: string;
+  // work_count: number;
   works: Book[];
 }

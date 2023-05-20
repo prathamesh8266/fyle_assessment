@@ -2,6 +2,7 @@ import { Inject, Injectable, } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpRequestOptions } from '../models/http-request-options.model';
 import { HttpClient } from '@angular/common/http';
+import { BookResponse } from '../models/book-response.model';
 
 const ROOT_URL = 'https://openlibrary.org';
 
@@ -15,6 +16,7 @@ export class ApiService {
 
   get<T>(url: string, config?: HttpRequestOptions): Observable<T> {
     const apiPath = `${ROOT_URL}${url}`;
+    console.log(apiPath);
     return this.httpClient.get<T>(apiPath, config);
   }
 
